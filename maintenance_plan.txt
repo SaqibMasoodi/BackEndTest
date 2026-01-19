@@ -1,0 +1,43 @@
+Asset Maintenance Strategy
+
+Problem
+The current strategy requires three steps to add an image:
+1. Save image to disk.
+2. `import` it in the JS file.
+3. Assign the variable.
+
+This is tedious for content updates, especially if you want to add/remove instructors or packages frequently.
+
+Recommended Solution: The `public/` Directory
+Move dynamic content images (hotels, packages, instructors) to a `public/` folder.
+
+How it works
+Vite serves everything in `public/` at the root URL path. Files are not bundled (hashed), but copied as-is to the build folder.
+
+New Workflow
+1. Save image: `public/images/new-hotel.jpg`
+2. Update Data: Just write the string path!
+   {
+       image: "/images/new-hotel.jpg"
+   }
+   No imports needed.
+
+Implementation Steps
+1. Move Images: Move the following folders from `assets/images/` to `public/images/`:
+   - `home/guides`
+   - `home/attractions`
+   - `stays`
+   - `packages`
+2. Update Data Files: Bulk find-and-replace in `instructors.js`, `attractions.js`, `hotels.js`, and `packages.js`:
+   - Remove all top-level `import ...` lines.
+   - Replace variables (e.g., `shafqatImg`) with simple string paths (e.g., `"/images/home/guides/shafqat.webp"`).
+
+Trade-offs
+Feature                     | Current (Imports)          | Public Folder (Proposed)
+----------------------------|----------------------------|--------------------------
+Ease of Adding Images       | Low (Requires coding)      | High (Drag & Drop)
+Browser Caching             | Excellent (Auto-hashing)   | Good (Filename based)
+Broken Link Detection       | High (Build fails)         | Low (Runtime error)
+
+Recommendation
+For a content-heavy site where you might frequently update images without deploying code changes, the Public Folder strategy is much easier to maintain.
