@@ -2,8 +2,6 @@
 
 A modern, multi-page website for Wolf Adventures, a premier ski school and guiding service in Gulmarg, Kashmir.
 
-[**Github Pages Preview**](https://saqibmasoodi.github.io/GulmargSki/)
-
 [**Live Website Preview**](https://wolfadventureskashmir.com/)
 
 ## Collaboration & Setup
