@@ -1,6 +1,4 @@
-# Gulmarg Ski Resort - Alpine & Vite Project
-
-A modern, multi-page website for Wolf Adventures, a premier ski school and guiding service in Gulmarg, Kashmir.
+# Work in progess : Backend Test ForGulmarg Ski Resort - Alpine & Vite Project
 
 [**Live Website Preview**](https://wolfadventureskashmir.com/)
 
